@@ -1,0 +1,20 @@
+def divide_and_sum(set1, set2):
+    # Cek jika himpunan memiliki panjang yang sama
+    if len(set1) != len(set2):
+        raise ValueError("Himpunan harus memiliki panjang yang sama")
+
+    # Inisialisasi list kosong untuk menyimpan hasil
+    results = []
+
+    # Iterasi atas himpunan dan bagi elemen yang sesuai
+    for num1, num2 in zip(set1, set2):
+        # Cek untuk pembagian oleh nol
+        if num2 == 0:
+            raise ValueError("Tidak dapat membagi oleh nol")
+        result = num1 / num2
+        results.append(result)
+
+    # Hitung jumlah hasil
+    total_sum = sum(results)
+
+    return total_sum
